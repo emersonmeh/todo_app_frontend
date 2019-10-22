@@ -153,7 +153,20 @@ PROJETO TODO-LIST - FRONTEND
 
 
 # ----------------------------------------------------------------------------------------------- #
+REDUX
 
+	Framework independente do React, utilizado para gerenciamento de estados.
+	
+	[] npm i --save-dev react-redux@5.02 redux@3.6.0
+	
+	Reducers - Funções que alteram o estado.
+	
+	import {combineReducers, createStore} from 'redux'
+		Métodos do Redux que criam o objeto Store que contem o estado e 
+		juntam todos os pedaços de estados criados em um objeto único.
+	
+	import {Provider} from 'react-redux'
+		Componente que pega o estado e passa para os componentes internos.
 
 
 
