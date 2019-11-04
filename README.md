@@ -167,6 +167,12 @@ REDUX
 	
 	import {Provider} from 'react-redux'
 		Componente que pega o estado e passa para os componentes internos.
+		
+	*DECORATOR: exporta um componente efetuando mapeamento de suas propriedades e
+		seu estado global, agora gerenciado pelo redux.
+		[] export default connect(mapStateToProps)(Field)
+				mapStateToProps - mapeamento utilizando redux
+				Field - componente react
 
 
 
