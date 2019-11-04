@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default propos => {
-    if(propos.test) {
-        return propos.children
+export default props => {
+    if(props.test) {
+        return props.children
     } else {
         return false
     }

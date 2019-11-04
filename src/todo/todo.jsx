@@ -11,7 +11,7 @@ export default class Todo extends Component {
     
     // Amarra o this à Classe Todo. (contexto léxico)
     // Usado para métodos que precisam acessar o estado atual.
-    constructo(props) {
+    constructor(props) {
         super(props)
         //this para ler o estado do obj, para alterar o estado usar o setState
         this.state = { description: '', list: [] }
@@ -78,7 +78,7 @@ export default class Todo extends Component {
                     handleAdd={this.handleAdd}
                     handleSearch={this.handleSearch}
                     handleClear={this.handleClear} />
-                <TodoList list={this.state.list}
+                <TodoList
                     handleMarkAsDone={this.handleMarkAsDone}
                     handleMarkAsPending={this.handleMarkAsPending}
                     handleRemove={this.handleRemove} />

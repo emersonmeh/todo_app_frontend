@@ -1,9 +1,10 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
 import Grid from '../template/grid'
-import Icon from '../template/iconButton'
-import iconButton from '../template/iconButton'
+import {changeDescription} from './todoActions'
 
-export default props => {
+const todoForm = props => {
     
     /* Adiciona atalhos de teclado */
     const keyHandler = (e) => {
@@ -20,7 +21,7 @@ export default props => {
                 <Grid cols='12 9 10'>
                     <input id='description' className='form-control'
                         placeholder='Adiocione uma tarefa'
-                        onChange={props.handleChange}
+                        onChange={props.changeDescription}
                         onKeyUp={keyHandler}
                         value={props.description}></input>
                 </Grid>
@@ -37,3 +38,6 @@ export default props => {
         )
     
 }
+const mapStateToProps = state => ({description: state.todo.description})
+const mapDispatchToProps = dispatch => bindActionCreators({ changeDescription}, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(todoForm)

@@ -1,16 +1,18 @@
-<<<<<<< HEAD
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './main/app'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
 
-ReactDOM.render(
-    <App />, document.getElementById('app')
-=======
-import React from 'react'
-import ReactDOM from 'react-dom'
 import App from './main/app'
+import reducers from './main/reducers'
 
+// devTools serve para interagir com o plugin ReduxDevtools instalado no Chrome
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
+    && window.__REDUX_DEVTOOLS_EXTENSION__()
+    
+const store = createStore(reducers, devTools)
 ReactDOM.render(
-    <App />, document.getElementById('app')
->>>>>>> 8a359922aac2a0b36d93645bfbd9e97deeb16ab5
-)
+    <Provider store={store}>
+        <App />
+    </Provider>
+, document.getElementById('root'))

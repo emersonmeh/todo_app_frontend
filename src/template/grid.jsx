@@ -21,3 +21,4 @@ export default class Grid extends Component {
             </div>
         )
     }
+}
