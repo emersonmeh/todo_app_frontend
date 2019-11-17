@@ -168,16 +168,48 @@ REDUX
 	import {Provider} from 'react-redux'
 		Componente que pega o estado e passa para os componentes internos.
 
+	*DECORATOR: exporta um componente efetuando mapeamento de suas propriedades e
+		seu estado global, agora gerenciado pelo redux.
+		[] export default connect(mapStateToProps)(Field)
+				mapStateToProps - mapeamento utilizando redux
+				Field - componente react
+	
+	
 
 
+# ----------------------------------------------------------------------------------------------- #
+REDUX-PROMISE
+
+	[] npm i --save-dev redux-promise@0.5.3
+
+		Permite trabalhar com Promise dentro do Action Create, fazendo
+		com que a espere a promise ser resolvida para somente depois
+		disparar o reducer.
+
+		Para uso, no index.js fazer os imports:
+			import {applyMiddleware} from 'redux'
+			import promise from 'redux-promise'
 
 
+# ----------------------------------------------------------------------------------------------- #
+REDUX-MULTI
+
+	[] npm i --save-dev redux-multi@0.1.12 
+
+		Permite dentro de uma Action Creator retornar um array com várias
+		Actions.
+
+# ----------------------------------------------------------------------------------------------- #
+REDUX-THUNK
+
+	[] npm i --save-dev redux-thunk@2.2.0
+	
+		Permite trabalhar com método .then, esperando a execução anterior e 
+		executando a proxima Action.
+		O callback sempre retorna um dispatch que executa a próxima ação.
 
 
-
-
-
-
+# ----------------------------------------------------------------------------------------------- #
 
 
 
